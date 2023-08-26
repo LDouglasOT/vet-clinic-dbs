@@ -89,7 +89,7 @@ WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
 
 SELECT animals.name
 FROM animals
-JOIN owners ON animals.owners_id = owners.id
+JOIN owners ON animals.owner_id = owners.id
 WHERE owners.full_name = 'Melody Pond';
 
 SELECT animals.name
@@ -99,7 +99,7 @@ WHERE species.name = 'Pokemon';
 
 SELECT owners.full_name, animals.name
 FROM owners
-LEFT JOIN animals ON owners.id = animals.owners_id;
+LEFT JOIN animals ON owners.id = animals.owner_id;
 
 SELECT species.name, COUNT(animals.id) AS animal_count
 FROM species
@@ -109,10 +109,10 @@ GROUP BY species.name;
 SELECT animals.name
 FROM animals
 JOIN species ON animals.species_id = species.id
-JOIN owners ON animals.owners_id = owners.id
+JOIN owners ON animals.owner_id = owners.id
 WHERE species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell';
 
 SELECT animals.name
 FROM animals
-JOIN owners ON animals.owners_id = owners.id
+JOIN owners ON animals.owner_id = owners.id
 WHERE owners.full_name = 'Dean Winchester' AND
