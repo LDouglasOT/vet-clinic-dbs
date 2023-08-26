@@ -18,7 +18,7 @@ ADD species VARCHAR(255);
 
 psql
 /c mydatabases
-CREATE TABLE owner (
+CREATE TABLE owners (
   id SERIAL PRIMARY KEY,
   full_name VARCHAR(255),
   age INTEGER
