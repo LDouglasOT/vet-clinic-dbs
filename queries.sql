@@ -69,8 +69,8 @@ SELECT AVG(weight_kg) FROM animals;
 SELECT SUM(escape_attempts) FROM animals
 WHERE neutered = True;
 
-SELECT SUM(escape_attempts) FROM animals
-WHERE neutered = False;
+SELECT neutered, MAX(escape_attempts) FROM animals
+GROUP BY neutered;
 
 SELECT MAX(weight_kg) FROM animals
 WHERE species = 'pokemon';
@@ -84,5 +84,6 @@ WHERE species = 'digimon';
 SELECT MIN(weight_kg) FROM animals
 WHERE species = 'digimon';
 
-SELECT AVG(escape_attempts) FROM animals
-WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
+SELECT species, AVG(escape_attempts) FROM animals
+GROUP BY species
+WHERE  date_of_birth >= '1990/01/01' AND date_of_birth <= '2000/12/31';
